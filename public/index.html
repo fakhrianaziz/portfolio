@@ -1,89 +1,657 @@
 <!DOCTYPE html>
-<html>
-  <head>
+<html lang="en">
+
+<head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Welcome to Firebase Hosting</title>
+    <title>Fakhrian Aziz - My Portfolio</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free Website Template" name="keywords">
+    <meta content="Free Website Template" name="description">
 
-    <!-- update the version number as needed -->
-    <script defer src="/__/firebase/8.9.1/firebase-app.js"></script>
-    <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/8.9.1/firebase-auth.js"></script>
-    <script defer src="/__/firebase/8.9.1/firebase-database.js"></script>
-    <script defer src="/__/firebase/8.9.1/firebase-firestore.js"></script>
-    <script defer src="/__/firebase/8.9.1/firebase-functions.js"></script>
-    <script defer src="/__/firebase/8.9.1/firebase-messaging.js"></script>
-    <script defer src="/__/firebase/8.9.1/firebase-storage.js"></script>
-    <script defer src="/__/firebase/8.9.1/firebase-analytics.js"></script>
-    <script defer src="/__/firebase/8.9.1/firebase-remote-config.js"></script>
-    <script defer src="/__/firebase/8.9.1/firebase-performance.js"></script>
-    <!-- 
-      initialize the SDK after all desired features are loaded, set useEmulator to false
-      to avoid connecting the SDK to running emulators.
-    -->
-    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
 
-    <style media="screen">
-      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
-      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
-      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
-      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
-      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
-      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
-      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
-      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
-      @media (max-width: 600px) {
-        body, #message { margin-top: 0; background: white; box-shadow: none; }
-        body { border-top: 16px solid #ffa100; }
-      }
-    </style>
-  </head>
-  <body>
-    <div id="message">
-      <h2>Welcome</h2>
-      <h1>Firebase Hosting Setup Complete</h1>
-      <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
-      <a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a>
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS Libraries -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body data-spy="scroll" data-target=".navbar" data-offset="51">
+    <!-- Nav Bar Start -->
+    <div class="navbar navbar-expand-lg bg-light navbar-light">
+        <div class="container-fluid">
+            <a href="index.html" class="navbar-brand">My Portfolio</a>
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                <div class="navbar-nav ml-auto">
+                    <a href="#home" class="nav-item nav-link active">Home</a>
+                    <a href="#about" class="nav-item nav-link">About</a>
+                    <a href="#experience" class="nav-item nav-link">Experience</a>
+                    <a href="#portfolio" class="nav-item nav-link">Portfolio</a>
+                    <a href="#contact" class="nav-item nav-link">Contact</a>
+                </div>
+            </div>
+        </div>
     </div>
-    <p id="load">Firebase SDK Loading&hellip;</p>
+    <!-- Nav Bar End -->
 
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const loadEl = document.querySelector('#load');
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-        // // The Firebase SDK is initialized and available here!
-        //
-        // firebase.auth().onAuthStateChanged(user => { });
-        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
-        // firebase.firestore().doc('/foo/bar').get().then(() => { });
-        // firebase.functions().httpsCallable('yourFunction')().then(() => { });
-        // firebase.messaging().requestPermission().then(() => { });
-        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
-        // firebase.analytics(); // call to activate
-        // firebase.analytics().logEvent('tutorial_completed');
-        // firebase.performance(); // call to activate
-        //
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
 
-        try {
-          let app = firebase.app();
-          let features = [
-            'auth', 
-            'database', 
-            'firestore',
-            'functions',
-            'messaging', 
-            'storage', 
-            'analytics', 
-            'remoteConfig',
-            'performance',
-          ].filter(feature => typeof app[feature] === 'function');
-          loadEl.textContent = `Firebase SDK loaded with ${features.join(', ')}`;
-        } catch (e) {
-          console.error(e);
-          loadEl.textContent = 'Error loading the Firebase SDK, check the console.';
-        }
-      });
-    </script>
-  </body>
+    <!-- Hero Start -->
+    <div class="hero" id="home">
+        <div class="container-fluid">
+            <div class="row align-items-center">
+                <div class="col-sm-12 col-md-6">
+                    <div class="hero-content">
+                        <div class="hero-text">
+                            <p>I'm</p>
+                            <h1>Fakhrian Aziz</h1>
+                            <h2></h2>
+                            <div class="typed-text">Web Designer, Apps Designer, UI/UX Designer, Graphic Designer</div>
+                        </div>
+                        <div class="hero-btn">
+                            <!-- <a class="btn" href="">Hire Me</a> -->
+                            <a class="btn" href="">Contact Me</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-6 d-none d-md-block">
+                    <div class="hero-image">
+                        <img src="img/hero-1.png" alt="Hero Image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Hero End -->
+
+
+    <!-- About Start -->
+    <div class="about wow fadeInUp" data-wow-delay="0.1s" id="about">
+        <div class="container-fluid">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="about-img">
+                        <img src="img/about-1.jpg" alt="Image">
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="about-content">
+                        <div class="section-header text-left">
+                            <p>Learn About Me</p>
+                            <h2>2 Years Experience in UI/UX Designer</h2>
+                        </div>
+                        <div class="about-text">
+                            <p>
+                                I'm just a simple person, simple style, and what it is. Always compete with myself to be
+                                better than I used to be. Have a high desire to learn wherever I am. Therefore, all
+                                living processes are valuable knowledge.
+                            </p>
+                        </div>
+                        <div class="porto-info">
+                            <div class="porto-social">
+                                <!-- <a href=""><i class="fab fa-twitter"></i></a> -->
+                                <!-- <a href=""><i class="fab fa-facebook-f"></i></a> -->
+                                <a href="https://linktr.ee/fakhrianaziz" target="_blank"><i class="fab fa-figma"></i></a>
+                                <a href="https://www.instagram.com/fakhrianaziz/" target="_blank"><i
+                                        class="fab fa-instagram"></i></a>
+                                <a href="https://www.linkedin.com/in/mohamad-nurfakhrian-aziz-91886b11a/"
+                                    target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="https://dribbble.com/fakhrian" target="_blank"><i
+                                        class="fab fa-dribbble"></i></a>
+                                <a href="https://medium.com/@fakhrianaziz" target="_blank"><i
+                                        class="fab fa-medium-m"></i></i></a>
+                            </div>
+                        </div>
+                        <a class="btn" target="_blank"
+                            href="https://drive.google.com/file/d/1o4NVz1Nqfvn3_thCUdSmoT-tDo-tf_lp/view?usp=sharing"><i
+                                class="fas fa-download"></i> Download My CV</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+
+
+    <!-- Experience Start -->
+    <div class="experience" id="experience">
+        <div class="container">
+            <header class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
+                <p>My Resume</p>
+                <h2>Working Experience</h2>
+            </header>
+            <div class="timeline">
+                <div class="timeline-item left wow slideInLeft" data-wow-delay="0.1s">
+                    <div class="timeline-text">
+                        <div class="timeline-date">November 2021 - October 2022 (Layoff)</div>
+                        <h2>UI/UX Designer</h2>
+                        <h4>PT RUPI Digital Indonesia, Jakarta</h4>
+                        <ul>
+                            <li>Conducting Competitive Analysis: Flow Research, UX Research, UI Research</li>
+                            <li>Make card sorting to get insight from research results</li>
+                            <li>Creating an Atomic Design System</li>
+                            <li>Creating Mobile Apps Design and Web Design</li>
+                            <li>Delivering Design Assets to Developers</li>
+                            <li>Work closely with the Developer Team, Product Manager and Product Owner</li>
+                            <li>Doing QA Design with the Developer Team</li>
+                            <li>Can work in the field of Graphic Designer if needed</li>
+                            <li>Can use Design Tools such as Figma, Adobe Illustrator, Adobe Photoshop</li>
+                            <li>Participate in internal and external project development including Attendance App, E-Wallet, E-Commerce, MyJNE, BP2MI</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item right wow slideInRight" data-wow-delay="0.1s">
+                    <div class="timeline-text">
+                        <div class="timeline-date">December 2020 - August 2021 (Layoff)</div>
+                        <h2>UI/UX Designer</h2>
+                        <h4>PT Yabes Multipro Solusindo, Jakarta</h4>
+                        <ul>
+                            <li>Conducting Competitive Analysis : Flow Research, UX Research, UI Research</li>
+                            <li>Creating a Design System for each Product</li>
+                            <li>Creating Mobile Design and Web Design</li>
+                            <li>Delivering Design Assets to Developers</li>
+                            <li>Work closely with Team Developer and Product Manager</li>
+                            <li>Become a Product QA on the Front-End that has been done by every developer</li>
+                            <li>Can do slicing design to Flutter (component) if needed by mobile developer</li>
+                            <li>Collaborate with the Content Writer Team, Social Media to create Instagram post designs, poster designs, and other marketing needs</li>
+                            <li>Can use Design Tools such as Figma, Adobe XD, Adobe Illustrator, Adobe Photoshop</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item left wow slideInLeft" data-wow-delay="0.1s">
+                    <div class="timeline-text">
+                        <div class="timeline-date">April 2020 - Until Now</div>
+                        <h2>Graphic Designer, UI/UX Designer</h2>
+                        <h4>Freelance, Karawang</h4>
+                        <ul>
+                            <li>Creating a logo for a start-up business</li>
+                            <li>Create UI Design for freelance project</li>
+                            <li>Design and run a unit and dozens of t-shirt screen printing business with colleagues</li>
+                            <li>Currently building a POS application with colleagues (On Progress)</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item right wow slideInRight" data-wow-delay="0.1s">
+                    <div class="timeline-text">
+                        <div class="timeline-date">November 2019 - Februari 2020</div>
+                        <h2>Training UI/UX Design</h2>
+                        <h4>Purwadhika Startup School, BSD Tangerang</h4>
+                        <ul>
+                            <li>UI/UX Design Fundamental</li>
+                            <li>UX Research, Ideate, and Define</li>
+                            <li>UI Design</li>
+                            <li>Feedback to Iterate</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item left wow slideInLeft" data-wow-delay="0.1s">
+                    <div class="timeline-text">
+                        <div class="timeline-date">Januari 2019 - November 2019 (Resign)</div>
+                        <h2>IT Support</h2>
+                        <h4>PT Sumber Inti Pangan, Tangerang</h4>
+                        <ul>
+                            <li>Troubleshooting network</li>
+                            <li>Troubleshooting hardware (printer, pc, and other devices)</li>
+                            <li>Troubleshooting software (fixed crash, create templates for accounting management)
+                            </li>
+                            <li>Willing to solve problems if outside working hours</li>
+                            <li>Create product designs (using Adobe Photoshop, Adobe Illustrator, Corel Draw)</li>
+                            <li>Printing banners, mockups and other designs</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Job Experience End -->
+
+
+    <!-- Portfolio Start -->
+    <div class="portfolio" id="portfolio">
+        <div class="container">
+            <div class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
+                <p>My Portfolio</p>
+                <h2>My Recent Portfolio</h2>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <ul id="portfolio-filter">
+                        <li data-filter="*" class="filter-active">All</li>
+                        <li data-filter=".filter-1">Web Design</li>
+                        <li data-filter=".filter-2">Apps Design</li>
+                        <li data-filter=".filter-3">Graphic Design</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row portfolio-container">
+                <div class="col-lg-4 col-md-6 col-sm-12 portfolio-item filter-1 wow fadeInUp" data-wow-delay="0.0s">
+                    <div class="portfolio-wrap">
+                        <div class="portfolio-img">
+                            <img src="img/Web Design/Website E-Proc - Vendor Registration.jpg" alt="Image">
+                        </div>
+                        <div class="portfolio-text">
+                            <h3>E-Proc Website - Vendor Register</h3>
+                            <a class="btn" href="img/Web Design/Website E-Proc - Vendor Registration.jpg"
+                                data-lightbox="portfolio">+</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 portfolio-item filter-2 wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="portfolio-wrap">
+                        <div class="portfolio-img">
+                            <img src="img/Apps Design/Mobile Apps - Booking Apartment.jpg" alt="Image">
+                        </div>
+                        <div class="portfolio-text">
+                            <h3>Apps - Booking Apartment</h3>
+                            <a class="btn" href="img/Apps Design/Mobile Apps - Booking Apartment.jpg"
+                                data-lightbox="portfolio">+</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 portfolio-item filter-3 wow fadeInUp" data-wow-delay="0.4s">
+                    <div class="portfolio-wrap">
+                        <div class="portfolio-img">
+                            <img src="img/Sosmed/IG Post VPP.jpg" alt="Image">
+                        </div>
+                        <div class="portfolio-text">
+                            <h3>IG Post 1</h3>
+                            <a class="btn" href="img/Sosmed/IG Post VPP.jpg" data-lightbox="portfolio">+</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 portfolio-item filter-1 wow fadeInUp" data-wow-delay="0.0s">
+                    <div class="portfolio-wrap">
+                        <div class="portfolio-img">
+                            <img src="img/Web Design/Website E-Proc - Dashboard.jpg" alt="Image">
+                        </div>
+                        <div class="portfolio-text">
+                            <h3>E-Proc Website - Dashboard</h3>
+                            <a class="btn" href="img/Web Design/Website E-Proc - Dashboard.jpg"
+                                data-lightbox="portfolio">+</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 portfolio-item filter-2 wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="portfolio-wrap">
+                        <div class="portfolio-img">
+                            <img src="img/Apps Design/Mobile Apps - IPL & CS Complaint.jpg" alt="Image">
+                        </div>
+                        <div class="portfolio-text">
+                            <h3>Apps - IPL Payment & CS Complaint</h3>
+                            <a class="btn" href="img/Apps Design/Mobile Apps - IPL & CS Complaint.jpg"
+                                data-lightbox="portfolio">+</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 portfolio-item filter-3 wow fadeInUp" data-wow-delay="0.4s">
+                    <div class="portfolio-wrap">
+                        <div class="portfolio-img">
+                            <img src="img/Sosmed/IG Post Gosyen.jpg" alt="Image">
+                        </div>
+                        <div class="portfolio-text">
+                            <h3>IG Post 2</h3>
+                            <a class="btn" href="img/Sosmed/IG Post Gosyen.jpg" data-lightbox="portfolio">+</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 portfolio-item filter-1 wow fadeInUp" data-wow-delay="0.0s">
+                    <div class="portfolio-wrap">
+                        <div class="portfolio-img">
+                            <img src="img/Web Design/Website ERP - Sales Prospecting.jpg" alt="Image">
+                        </div>
+                        <div class="portfolio-text">
+                            <h3>ERP Website - Sales Prospecting</h3>
+                            <a class="btn" href="img/Web Design/Website ERP - Sales Prospecting.jpg"
+                                data-lightbox="portfolio">+</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 portfolio-item filter-2 wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="portfolio-wrap">
+                        <div class="portfolio-img">
+                            <img src="img/Apps Design/Mobile Apps - Sales Prospecting.jpg" alt="Image">
+                        </div>
+                        <div class="portfolio-text">
+                            <h3>Apps - Sales Prospecting</h3>
+                            <a class="btn" href="img/Apps Design/Mobile Apps - Sales Prospecting.jpg"
+                                data-lightbox="portfolio">+</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 portfolio-item filter-3 wow fadeInUp" data-wow-delay="0.4s">
+                    <div class="portfolio-wrap">
+                        <div class="portfolio-img">
+                            <img src="img/Sosmed/Brosur VPP.jpg" alt="Image">
+                        </div>
+                        <div class="portfolio-text">
+                            <h3>Brosur 1</h3>
+                            <a class="btn" href="img/Sosmed/Brosur VPP.jpg" data-lightbox="portfolio">+</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 portfolio-item filter-1 wow fadeInUp" data-wow-delay="0.0s">
+                    <div class="portfolio-wrap">
+                        <div class="portfolio-img">
+                            <img src="img/Web Design/Website VPP - Company Profile.jpg" alt="Image">
+                        </div>
+                        <div class="portfolio-text">
+                            <h3>Company Profile - Website 1</h3>
+                            <a class="btn" href="img/Web Design/Website VPP - Company Profile.jpg"
+                                data-lightbox="portfolio">+</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 portfolio-item filter-2 wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="portfolio-wrap">
+                        <div class="portfolio-img">
+                            <img src="img/Apps Design/Mobile Apps - Rumah Pangan Kita by Bulog.jpg" alt="Image">
+                        </div>
+                        <div class="portfolio-text">
+                            <h3>Apps - RPK by Bulog</h3>
+                            <a class="btn" href="img/Apps Design/Mobile Apps - Rumah Pangan Kita by Bulog.jpg"
+                                data-lightbox="portfolio">+</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 portfolio-item filter-3 wow fadeInUp" data-wow-delay="0.4s">
+                    <div class="portfolio-wrap">
+                        <div class="portfolio-img">
+                            <img src="img/Sosmed/Brosur Gosyen.jpg" alt="Image">
+                        </div>
+                        <div class="portfolio-text">
+                            <h3>Brosur 2</h3>
+                            <a class="btn" href="img/Sosmed/Brosur Gosyen.jpg" data-lightbox="portfolio">+</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 col-sm-12 portfolio-item filter-1 wow fadeInUp" data-wow-delay="0.0s">
+                    <div class="portfolio-wrap">
+                        <div class="portfolio-img">
+                            <img src="img/Web Design/Website Yabes - Company Profile.jpg" alt="Image">
+                        </div>
+                        <div class="portfolio-text">
+                            <h3>Company Profile - Website 2</h3>
+                            <a class="btn" href="img/Web Design/Website Yabes - Company Profile.jpg"
+                                data-lightbox="portfolio">+</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 portfolio-item filter-2 wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="portfolio-wrap">
+                        <div class="portfolio-img">
+                            <img src="img/Apps Design/Mobile Apps - POS.jpg" alt="Image">
+                        </div>
+                        <div class="portfolio-text">
+                            <h3>Tab View - POS</h3>
+                            <a class="btn" href="img/Apps Design/Mobile Apps - POS.jpg" data-lightbox="portfolio">+</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 portfolio-item filter-3 wow fadeInUp" data-wow-delay="0.4s">
+                    <div class="portfolio-wrap">
+                        <div class="portfolio-img">
+                            <img src="img/Sosmed/X-Banner Gosyen.jpg" alt="Image">
+                        </div>
+                        <div class="portfolio-text">
+                            <h3>X-Banner</h3>
+                            <a class="btn" href="img/Sosmed/X-Banner Gosyen.jpg" data-lightbox="portfolio">+</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 col-sm-12 portfolio-item filter-1 wow fadeInUp" data-wow-delay="0.0s">
+                    <div class="portfolio-wrap">
+                        <div class="portfolio-img">
+                            <img src="img/Web Design/Web vAccounting - Company Profile.jpg" alt="Image">
+                        </div>
+                        <div class="portfolio-text">
+                            <h3>Company Profile - Website 3</h3>
+                            <a class="btn" href="img/Web Design/Web vAccounting - Company Profile.jpg"
+                                data-lightbox="portfolio">+</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 portfolio-item filter-2 wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="portfolio-wrap">
+                        <div class="portfolio-img">
+                            <img src="img/Apps Design/Mobile Apps - Omah.jpg" alt="Image">
+                        </div>
+                        <div class="portfolio-text">
+                            <h3>Apps - Omah</h3>
+                            <a class="btn" href="img/Apps Design/Mobile Apps - Omah.jpg" data-lightbox="portfolio">+</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 col-sm-12 portfolio-item filter-1 wow fadeInUp" data-wow-delay="0.4s">
+                    <div class="portfolio-wrap">
+                        <div class="portfolio-img">
+                            <img src="img/Web Design/Website Plus Studio - Company Profile.jpg" alt="Image">
+                        </div>
+                        <div class="portfolio-text">
+                            <h3>Company Profile - Website 4</h3>
+                            <a class="btn" href="img/Web Design/Website Plus Studio - Company Profile.jpg"
+                                data-lightbox="portfolio">+</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 portfolio-item filter-2 wow fadeInUp" data-wow-delay="0.0s">
+                    <div class="portfolio-wrap">
+                        <div class="portfolio-img">
+                            <img src="img/Apps Design/Mobile Apps - Muncak.jpg" alt="Image">
+                        </div>
+                        <div class="portfolio-text">
+                            <h3>Apps - Muncak</h3>
+                            <a class="btn" href="img/Apps Design/Mobile Apps - Muncak.jpg"
+                                data-lightbox="portfolio">+</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 col-sm-12 portfolio-item filter-1 wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="portfolio-wrap">
+                        <div class="portfolio-img">
+                            <img src="img/Web Design/Website Redesign Managix - Tes Masuk.jpg" alt="Image">
+                        </div>
+                        <div class="portfolio-text">
+                            <h3>Redesign Shop Management - Tes Masuk</h3>
+                            <a class="btn" href="img/Web Design/Website Redesign Managix - Tes Masuk.jpg"
+                                data-lightbox="portfolio">+</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 portfolio-item filter-2 wow fadeInUp" data-wow-delay="0.4s">
+                    <div class="portfolio-wrap">
+                        <div class="portfolio-img">
+                            <img src="img/Apps Design/Mobile Apps - Hiking Rent.jpg" alt="Image">
+                        </div>
+                        <div class="portfolio-text">
+                            <h3>Apps - Hiking Rent</h3>
+                            <a class="btn" href="img/Apps Design/Mobile Apps - Hiking Rent.jpg"
+                                data-lightbox="portfolio">+</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 col-sm-12 portfolio-item filter-1 wow fadeInUp" data-wow-delay="0.0s">
+                    <div class="portfolio-wrap">
+                        <div class="portfolio-img">
+                            <img src="img/Web Design/Website - AI Banking.jpg" alt="Image">
+                        </div>
+                        <div class="portfolio-text">
+                            <h3>AI Banking - Dashboard</h3>
+                            <a class="btn" href="img/Web Design/Website - AI Banking.jpg"
+                                data-lightbox="portfolio">+</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 portfolio-item filter-2 wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="portfolio-wrap">
+                        <div class="portfolio-img">
+                            <img src="img/Apps Design/Mobile Apps - Tripelago.jpg" alt="Image">
+                        </div>
+                        <div class="portfolio-text">
+                            <h3>Apps - Tripelago</h3>
+                            <a class="btn" href="img/Apps Design/Mobile Apps - Tripelago.jpg"
+                                data-lightbox="portfolio">+</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 portfolio-item filter-1 wow fadeInUp" data-wow-delay="0.4s">
+                    <div class="portfolio-wrap">
+                        <div class="portfolio-img">
+                            <img src="img/Web Design/Website - Car Dealer.jpg" alt="Image">
+                        </div>
+                        <div class="portfolio-text">
+                            <h3>Company Profile - Website 5</h3>
+                            <a class="btn" href="img/Web Design/Website - Car Dealer.jpg"
+                                data-lightbox="portfolio">+</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 portfolio-item filter-2 wow fadeInUp" data-wow-delay="0.0s">
+                    <div class="portfolio-wrap">
+                        <div class="portfolio-img">
+                            <img src="img/Apps Design/Mobile Apps - Furniture Apps.jpg" alt="Image">
+                        </div>
+                        <div class="portfolio-text">
+                            <h3>Apps - Furniture</h3>
+                            <a class="btn" href="img/Apps Design/Mobile Apps - Furniture Apps.jpg"
+                                data-lightbox="portfolio">+</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Portfolio End -->
+
+
+    <!-- Contact Start -->
+    <div class="contact wow fadeInUp" data-wow-delay="0.1s" id="contact">
+        <div class="container">
+            <div class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
+                <p>Contact Me</p>
+                <h2>Contact Form</h2>
+            </div>
+            <div class="row align-items-lg-center">
+                <div class="col-lg-4">
+                    <div class="contact-img">
+                        <img src="img/contact-2.png" alt="Image">
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <form class="whatsapp-form">
+                        <div class="datainput">
+                            <input class="validate" id="wa_name" name="name" required="" type="text" value='' />
+                            <span class="highlight"></span><span class="bar"></span>
+                            <label>Your Name / Institution</label>
+                        </div>
+                        <div class="datainput">
+                            <input class="validate" id="wa_email" name="email" required="" type="email" value='' />
+                            <span class="highlight"></span><span class="bar"></span>
+                            <label>Email Address</label>
+                        </div>
+                        <div class="datainput">
+                            <textarea id='wa_textarea' placeholder='' maxlength='5000' row='1' required=""></textarea>
+                            <span class="highlight"></span><span class="bar"></span>
+                            <label>Description</label>
+                        </div>
+                        <a class="send_form" href="javascript:void" type="submit" title="Send to Whatsapp">Send to
+                            Whatsapp</a>
+                        <div id="text-info"></div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- Contact End -->
+
+
+    <!-- Footer Start -->
+    <div class="footer wow fadeIn" data-wow-delay="0.3s">
+        <div class="container-fluid">
+            <div class="container">
+                <div class="footer-info">
+                    <h2>Mohamad Nurfakhrian Aziz</h2>
+                    <h3>Pondok Rawamas Indah, Blok D2/3, Kotabaru, Karawang</h3>
+                    <div class="footer-menu">
+                        <p>+62 812 9975 6779</p>
+                        <p>fakhrianaziz@gmail.com</p>
+                    </div>
+                    <div class="footer-social">
+                        <a href="https://linktr.ee/fakhrianaziz" target="_blank"><i class="fab fa-figma"></i></a>
+                        <a href="https://www.instagram.com/fakhrianaziz/" target="_blank"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/mohamad-nurfakhrian-aziz-91886b11a/" target="_blank"><i
+                                class="fab fa-linkedin-in"></i></a>
+                        <a href="https://dribbble.com/fakhrian" target="_blank"><i class="fab fa-dribbble"></i></a>
+                        <a href="https://medium.com/@fakhrianaziz" target="_blank"><i
+                                class="fab fa-medium-m"></i></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="container copyright">
+                <p>&copy; <a href="#">fakhrianaziz</a>, All Right Reserved | Designed By <a
+                        href="https://htmlcodex.com">HTML Codex</a></p>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Back to top button -->
+    <a href="#" class="btn back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+
+    <!-- Pre Loader -->
+    <div id="loader" class="show">
+        <div class="loader"></div>
+    </div>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/typed/typed.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/isotope/isotope.pkgd.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
+
+    <!-- Contact Javascript File -->
+    <script src="mail/jqBootstrapValidation.min.js"></script>
+    <script src="mail/contact.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="/__/firebase/8.9.1/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="/__/firebase/8.9.1/firebase-analytics.js"></script>
+
+<!-- Initialize Firebase -->
+<script src="/__/firebase/init.js"></script>
+
 </html>
